@@ -133,6 +133,7 @@ body {
     max-width: 384px;
     text-align: center;
     margin-top: 40px;
+    direction: revert;
 }
 
 .car-item-image img {
@@ -140,7 +141,7 @@ body {
     transition: 1.5s;
 }
 
-.car-item-image:hover img {
+.car-item:hover > .car-item-image img {
     transform: scale(1.15);
 }
 
@@ -170,7 +171,7 @@ body {
 }
 
 .car-item-action {
-    margin-top:13px;
+    margin-top: 13px;
 }
 
 .car-item-action .button {

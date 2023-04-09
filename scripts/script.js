@@ -28,7 +28,22 @@ document.getElementById("main-action").onclick = function (arg) {
 
 let buttons = document.getElementsByClassName("car-button");
 for (let i = 0; i < buttons.length; i++) {
-    buttons[i].onclick = function() {
+
+    buttons[i].onclick = function () {
+        let parent = this.closest(".car-item");
+        let selected_car = parent.querySelector(".car-item-title").textContent;
+
+        //alert(selected_car);
+        const selectElement = document.getElementById('car');
+        const options = selectElement.options;
+
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].value === selected_car) {
+                options[i].selected = true;
+                break;
+            }
+        }
+
         scroll(`1000`, "price");
     }
 }
@@ -52,14 +67,24 @@ scrollToTopBtn.addEventListener("click", () => {
 
 
 document.getElementById("price-action").onclick = function () {
-    if (document.getElementById("name").value === "") {
-        alert("Заполните поле имя!");
-    } else if (document.getElementById("phone").value === "") {
-        alert("Заполните поле телефон!");
-    } else if (document.getElementById("car").value === "") {
-        alert("Заполните поле автомобиль!");
+    let name, phone, car;
+
+    name = document.getElementById("name").value;
+    phone = document.getElementById("phone").value;
+    car = document.getElementById("car").value;
+
+    if (name === "") {
+        alert("Заполните, пожалуйста, поле \"Ваше имя\"!");
+    } else if (phone === "") {
+        alert("Заполните, пожалуйста, поле \"Ваш телефон\"!");
+    } else if (car === "") {
+        alert("Выберите, пожалуйста, автомобиль!");
     } else {
-        alert("Спасибо за заявку, мы свяжемся с вами в ближайшее время!");
+        alert(`${name}, Здравствуйте!
+        
+Вы выбрали автомобиль: ${car}.   
+Мы свяжемся с вами в ближайшее время по телефону: ${phone}.
+Спасибо за вашу заявку!`);
     }
 }
 /*document.getElementById("price-action").onclick = function (arg) {

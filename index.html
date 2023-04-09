@@ -205,7 +205,7 @@
                     </div>
                 </div>
                 <div class="car-item-action">
-                    <button class="button">Забронировать</button>
+                    <button class="button car-button">Забронировать</button>
                 </div>
             </div>
             <div class="car-item">
@@ -231,7 +231,7 @@
                     </div>
                 </div>
                 <div class="car-item-action">
-                    <button class="button">Забронировать</button>
+                    <button class="button car-button">Забронировать</button>
                 </div>
             </div>
             <div class="car-item">
@@ -257,7 +257,7 @@
                     </div>
                 </div>
                 <div class="car-item-action">
-                    <button class="button">Забронировать</button>
+                    <button class="button car-button">Забронировать</button>
                 </div>
             </div>
             <div class="car-item">
@@ -301,7 +301,19 @@
         <form class="price-form">
             <input type="text" class="price-input" id="name" placeholder="Ваше имя">
             <input type="text" class="price-input" id="phone" placeholder="Ваш телефон">
-            <input type="text" class="price-input" id="car" placeholder="Автомобиль, который вас интересует">
+            <!--<input type="text" class="price-input" id="car" placeholder="Автомобиль, который вас интересует">-->
+            <select name="car" id="car" class="price-input">
+                <option value="">Выберите автомобиль</option>
+                <option value="Lamborghini Huracan Spyder">Lamborghini Huracan Spyder</option>
+                <option value="Chevrolet Corvette">Chevrolet Corvette</option>
+                <option value="Ferrari California">Ferrari California</option>
+                <option value="Lamborghini Urus">Lamborghini Urus</option>
+                <option value="Audi R8">Audi R8</option>
+                <option value="Chevrolet Camaro">Chevrolet Camaro</option>
+                <option value="Maserati Quattroporte">Maserati Quattroporte</option>
+                <option value="Dodge Challenger">Dodge Challenger</option>
+                <option value="Nissan GT-R">Nissan GT-R</option>
+            </select>
             <button class="button" type="button" id="price-action">
                 Узнать цену
             </button>
