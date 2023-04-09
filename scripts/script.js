@@ -23,7 +23,7 @@ function scroll(duration_value, element_id) {
 }
 
 document.getElementById("main-action").onclick = function (arg) {
-    /*scroll(1000, "cars");*/
+    scroll(1000, "cars");
 };
 
 let buttons = document.getElementsByClassName("car-button");
@@ -65,3 +65,15 @@ document.getElementById("price-action").onclick = function () {
 /*document.getElementById("price-action").onclick = function (arg) {
 
 }*/
+
+document.addEventListener("DOMContentLoaded", function () {
+    let layer = document.querySelector('.price-image');
+    document.addEventListener('mousemove', (event) => {
+        layer.style.transform = 'translate3d(' + ((event.clientX * 0.3) / 8) + 'px,' + ((event.clientY * 0.3) / 8) + 'px,0px)';
+    });
+
+    const elem = document.querySelector(".main");
+    document.addEventListener('scroll', () => {
+        elem.style.backgroundPositionX = '0' + (0.3 * window.pageYOffset) + 'px';
+    })
+});
